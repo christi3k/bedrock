@@ -174,6 +174,10 @@ MINIFY_BUNDLES = {
         'firefox_all': (
             'css/firefox/all.less',
         ),
+        'firefox_android': (
+            'css/base/mozilla-accordion.less',
+            'css/firefox/android.less',
+        ),
         'firefox_unsupported': (
             'css/firefox/unsupported.less',
         ),
@@ -211,10 +215,6 @@ MINIFY_BUNDLES = {
         'firefox_desktop_trust': (
             'css/sandstone/sandstone-resp.less',
             'css/firefox/desktop/trust.less',
-        ),
-        'mobile_features': (
-            'css/firefox/template-resp.less',
-            'css/firefox/mobile-features.less',
         ),
         'firefox_sms': (
             'css/libs/socialshare/socialshare.less',
@@ -512,6 +512,10 @@ MINIFY_BUNDLES = {
         'firefox_all': (
             'js/base/mozilla-pager.js',
             'js/firefox/firefox-language-search.js',
+        ),
+        'firefox_android': (
+            'js/base/mozilla-accordion.js',
+            'js/firefox/android.js',
         ),
         'firefox-resp': (
             'js/libs/jquery-1.11.0.min.js',

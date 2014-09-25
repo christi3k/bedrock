@@ -4,56 +4,236 @@
 
 {% extends "firefox/base-resp.html" %}
 
-{% block page_title %}{{ _('Firefox for Android') }}{% endblock %}
-{% block page_desc %}{{ _('Get the mobile browser that′s got your back') }}{% endblock %}
-{% block body_id %}mobile-features{% endblock %}
+{% block page_title_prefix %}{% endblock %}
+{% block page_title %}{{ _('Firefox for Android — Mobile Web browser — More ways to customize and protect your privacy') }}{% endblock %}
+{% block page_desc %}{{ _('Only Firefox for Android offers so many ways to make your mobile browsing experience truly your own') }}{% endblock %}
+{% block body_id %}firefox-android{% endblock %}
 
 {% block site_css %}
-  {{ css('mobile_features') }}
+  {{ css('firefox_android') }}
 {% endblock %}
 
-{% block site_header_nav %}{% endblock %}
+{% block site_header %}
+  <header id="masthead">
+    <div class="container">
+      <a href="{{ url('mozorg.home') }}" id="tabzilla" data-infobar="{{ settings.TABZILLA_INFOBAR_OPTIONS }}">Mozilla</a>
+
+      {% block site_header_logo %}{% endblock %}
+      {% block site_header_nav %}{% endblock %}
+    </div>
+  </header>
+{% endblock %}
 
 {% block content %}
 
-<div id="main-feature">
-  {{ download_firefox(mobile=True, small=True) }}
-  <hgroup>
-    <h1 class="large">{{_('Firefox for Android')}}</h1>
-    <h2>{{_('Get the mobile browser that′s got your back')}}</h2>
-  </hgroup>
-</div>
+<section id="intro">
+  <div class="container">
+    <h2>
+      {{ _('We make it Firefox.') }}
+      {{ _('You make it your own.') }}
+    </h2>
 
-<div id="main-content">
-  <div class="col1">
-    <section id="fast">
-      <h2>{{_('Fast')}}</h2>
-      <p>{{_('Get to the Web quickly with speedy start up and page load times.')}}</p>
-      <p>{{_('Type less, browse more with the <a href="%s">Awesome Bar</a> and <a href="%s">Awesome Screen</a>.')|format('https://support.mozilla.org/kb/use-awesome-screen-search-firefox-android', 'https://support.mozilla.org/kb/use-awesome-screen-search-firefox-android')}}</p>
-      <p>{{_('Browse multiple sites at once, simply and easily, with easy-to-use <a href="%s">tabs.</a>')|format('https://support.mozilla.org/kb/use-awesome-screen-search-firefox-android')}}</p>
-    </section>
+    <p class="lead">
+      {{ _('The features you love.') }}
+      {{ _('The privacy you trust.') }}
+      {{ _('The most customizable Firefox for Android yet.') }}
+    </p>
 
-    <section id="safe">
-      <h2>{{_('Safe')}}</h2>
-      <p>{{_('Enjoy the latest security features to easily customize settings for passwords, private data, cookies and more. <a class="more" href="%s">Learn more</a>')|format('https://support.mozilla.org/kb/configure-mobile-privacy-and-security-settings') }}</p>
-      <p class="icon privacy"><span class="img"></span>{{_('Control what you share on the Web with features like <a href="%s">Do Not Track</a>.')|format(url('firefox.dnt')) }}</p>
-      <p>{{_('Browse without worry thanks to built-in <a href="%s">phishing and malware protection.</a>')|format(php_url('/firefox/phishing-protection/'))}}</p>
-    </section>
+    <a class="button" href="">
+      {{ _('Download on Google Play') }}
+    </a>
+  </div>{# /.container #}
+</section>
+
+<section id="customize">
+  <div class="container">
+    <h2>{{ _('Uniquely yours') }}</h2>
+
+    <p class="lead">
+      {{ _('Only Firefox for Android offers this many ways to make your mobile browsing experience truly your own.') }}
+    </p>
+
+    <div class="accordion" id="customize-accordion">
+      <section id="share">
+        <h3 data-accordion-role="tab">{{ _('Smarter sharing for all') }}</h3>
+
+        <div data-accordion-role="tabpanel">
+          <p>
+          {% trans %}
+            The most adaptive way to share anything, Quick Share remembers your most recently
+            used apps to help you get the word out just the way you want.
+          {% endtrans %}
+          </p>
+
+          <a rel="external" href="https://www.youtube.com/watch?v=a5nNPf-Uosc&amp;index=12&amp;list=PLA8ABF6B7A66A0C5E">{{ _('See how it works') }}</a>
+        </div>
+      </section>
+      <section id="addons">
+        <h3 data-accordion-role="tab">{{ _('All your faves, front and center') }}</h3>
+
+        <div data-accordion-role="tabpanel">
+          <p>
+          {% trans %}
+            Customize your home panels with any Web content you want and access your favorite
+            feeds &mdash; like Instagram and Pocket Hits &mdash; instantly.
+          {% endtrans %}
+          </p>
+
+          <a rel="external" href="https://www.youtube.com/watch?v=alW2g7Gnh6U&amp;list=PLA8ABF6B7A66A0C5E&amp;index=18">{{ _('See how it works') }}</a>
+        </div>
+      </section>
+      <section id="homepanel">
+        <h3 data-accordion-role="tab">{{ _('A touch more personal') }}</h3>
+
+        <div data-accordion-role="tabpanel">
+          <p>
+          {% trans %}
+            Display your Home panels in any order you like or add, hide and delete them as you
+            see fit to keep your favorites one touch away.
+          {% endtrans %}
+          </p>
+
+          <a rel="external" href="https://www.youtube.com/watch?v=HKvyr0TIKF0&amp;index=14&amp;list=PLA8ABF6B7A66A0C5E">{{ _('Learn more') }}</a>
+        </div>
+      </section>
+      <section id="search">
+        <h3 data-accordion-role="tab">{{ _('Any search you like') }}</h3>
+
+        <div data-accordion-role="tabpanel">
+          <p>
+            {{ _('Add any search engine and make it your default. ') }}
+            {{ _('Or change it any time to the one that best matches your search and privacy needs.') }}
+          </p>
+
+          <a rel="external" href="">{{ _('See how it works') }}</a>
+        </div>
+      </section>
+      <section id="language">
+        <h3 data-accordion-role="tab">{{ _('Change your language') }}</h3>
+
+        <div data-accordion-role="tabpanel">
+          <p>
+          {% trans %}
+            Change your browser language quickly and easily, without having to change the settings
+            for your entire device or even restart your browser.
+          {% endtrans %}
+          </p>
+
+          <a rel="external" href="https://support.mozilla.org/en-US/kb/change-default-language-firefox-android">{{ _('Learn more') }}</a>
+        </div>
+      </section>
+      <section id="screencast">
+        <h3 data-accordion-role="tab">{{ _('Take it to the big screen') }}</h3>
+
+        <div data-accordion-role="tabpanel">
+          <p>
+          {% trans %}
+            Send video and Web content from your smartphone or tablet to any TV equipped with
+            supported streaming capabilities.
+          {% endtrans %}
+          </p>
+
+          <a rel="external" href="">{{ _('Learn more') }}</a>
+        </div>
+      </section>
+    </div>{# /.accordion #}
+  </div>{# /.container #}
+</section>
+
+<section id="privacy">
+  <div class="container">
+    <h2>{{ _('Keep your private info private') }}</h2>
+
+    <p class="lead">
+      {{ _('We believe your personal information belongs to you.') }}
+      {{ _('Firefox for Android is filled with features to help keep it that way. ') }}
+    </p>
+
+    <ul>
+      <li id="dnt">
+        <strong>{{ _('Do not track') }}</strong>
+
+        <p>
+        {% trans %}
+          Enable this Firefox innovation to help you stay in control of how your browsing
+          information is collected and used online.
+        {% endtrans %}
+        </p>
+
+        <a href="{{ url('firefox.dnt') }}">{{ _('Learn more about Do Not Track') }}</a>
+      </li>
+      <li id="private-browsing">
+        <strong>{{ _('Private Browsing') }}</strong>
+
+        <p>
+        {% trans %}
+          When activated, Firefox for Android won’t accept cookies, remember passwords or
+          record any sites that you’ve visited.
+        {% endtrans %}
+        </p>
+
+        <a rel="external" href="https://www.youtube.com/watch?v=Ewk0YtFTBec&amp;list=PLA8ABF6B7A66A0C5E&amp;index=15">{{ _('Learn how to open a private window') }}</a>
+      </li>
+      <li id="clear-history">
+        <strong>{{ _('Clear history') }}</strong>
+
+        <p>
+          {{ _('Delete your browsing history, passwords and more in a single tap.') }}
+          {{ _('Choose the private data you want to remove whenever you need to do so.') }}
+        </p>
+
+        <a rel="external" href="https://support.mozilla.org/en-US/kb/clear-your-browsing-history-and-other-personal-dat">{{ _('Learn how to clear your history') }}</a>
+      </li>
+      <li id="guest-browsing">
+        <strong>{{ _('Guest browsing') }}</strong>
+
+        <p>
+        {% trans %}
+          Share your browser with friends and family without worrying that you’ll see
+          each other’s online activity.
+        {% endtrans %}
+        </p>
+
+        <a rel="external" href="https://www.youtube.com/watch?v=u6Ww0udnVA0&amp;index=16&amp;list=PLA8ABF6B7A66A0C5E">{{ _('Learn how to share your browser') }}</a>
+      </li>
+    </ul>
+  </div>{# /.container #}
+</section>
+
+<section id="sync">
+  <div class="container">
+    <h2>{{ _('Don’t leave home without being in Sync') }}</h2>
+
+    <p>
+      {{ _('Bring your passwords, bookmarks, open tabs and more everywhere you go.') }}
+      {{ _('Use Sync on your smartphone or tablet to access whatever you need from your desktop &mdash; and vice versa &mdash; without having to remember URLs.') }}
+    </p>
+
+    <a href="">{{ _('Learn more about Sync') }}</a>
+  </div>{# /.container #}
+</section>
+
+{% endblock %}
+
+{% block email_form %}
+  <div id="subscribe-download-wrapper" class="ga-section" data-ga-label="Get Firefox news">
+    <div class="container">
+      <div id="download-wrapper">
+        <h3>{{ _('Choose Firefox') }}</h3>
+        <a class="button" href="">
+          {{ _('Download on Google Play') }}
+        </a>
+
+        <a href="">{{ _('Supported devices') }}</a>
+        <a href="">{{ _('Release notes') }}</a>
+      </div>
+      <div id="subscribe-wrapper">
+        {{ email_newsletter_form(title=_('Get Firefox news')) }}
+      </div>
+    </div>
   </div>
+{% endblock %}
 
-  <div class="col2">
-    <section id="smart">
-      <h2>{{_('Smart')}}</h2>
-      <p class="icon html5"><span class="img"></span>{{_('Experience the unlimited possibilities of the mobile Web with full support for HTML5 and Web APIs. <a class="more" href="%s">Learn more</a>')|format('https://developer.mozilla.org/docs/HTML/HTML5')}}</p>
-      <p class="icon sync"><span class="img"></span>{{_('<a href="%s">Sync</a> your desktop history, bookmarks and passwords to all your devices for a painless browsing experience on mobile.')|format('https://support.mozilla.org/kb/how-do-i-set-up-firefox-sync')}}</p>
-      <p class="icon addons"><span class="img"></span>{{_('Personalize features and functionality with add-ons. <a class="more" href="%s">Get add-ons</a>')|format('https://addons.mozilla.org/android/')}}</p>
-    </section>
-
-    <section id="get">
-      <p>{{_('Get Firefox for Android free from <a href="%s">Google Play</a>')|format(settings.GOOGLE_PLAY_FIREFOX_LINK)}}</a></p>
-    </section>
-  </div>
-
-</div>
-
+{% block js %}
+  {{ js('firefox_android') }}
 {% endblock %}

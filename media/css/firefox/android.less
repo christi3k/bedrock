@@ -1,0 +1,86 @@
+// This Source Code Form is subject to the terms of the Mozilla Public
+// License, v. 2.0. If a copy of the MPL was not distributed with this
+// file, You can obtain one at http://mozilla.org/MPL/2.0/.
+
+@import '../sandstone/sandstone-resp.less';
+
+// Mixins
+
+.grainy-sky() {
+    background: #eeeeee url(/media/img/sandstone/grain.png) repeat;
+    background: url(/media/img/sandstone/bg-gradient-sky.png) repeat-x 0 0,
+                url(/media/img/sandstone/grain.png) repeat 0 0,
+                #eeeeee;
+}
+
+// Base template overrides
+
+.sky #outer-wrapper {
+    background: #fff;
+}
+
+#wrapper {
+    width: 100%;
+}
+
+// Common layout
+
+.container {
+    position: relative;
+    width: 940px;
+    margin: 0 auto;
+}
+
+// Intro
+
+#intro {
+    background: #eeeeee url(/media/img/sandstone/grain.png) repeat;
+    background: url(/media/img/firefox/android/bg-cubes.png) repeat 0 0,
+                url(/media/img/sandstone/bg-gradient-sky.png) repeat-x 0 0,
+                #eeeeee;
+}
+
+/****************************************************************************/
+// @High resolution images for @retina-type displays
+// Desktop
+@media (-webkit-min-device-pixel-ratio: 1.5),
+       (                min-resolution: 1.5dppx),
+       (                min-resolution: 144dpi) {
+
+}
+
+/****************************************************************************/
+// @Tablet Layout: 760px
+@media (max-width: @breakDesktop) and (min-width: @breakTablet) {
+
+}
+
+/****************************************************************************/
+// @High resolution images for @retina-type displays
+// Tablet
+@media only screen and (min-width: @breakTablet) and (max-width: @breakDesktop) and (-webkit-min-device-pixel-ratio: 1.5),
+       only screen and (min-width: @breakTablet) and (max-width: @breakDesktop) and (                min-resolution: 1.5dppx),
+       only screen and (min-width: @breakTablet) and (max-width: @breakDesktop) and (                min-resolution: 144dpi) {
+
+}
+
+/****************************************************************************/
+// @Wide mobile Layout: 480px
+@media (max-width: @breakTablet) {
+
+}
+
+/****************************************************************************/
+// @High resolution images for @retina-type displays
+// Wide mobile
+@media only screen and (max-width: @breakTablet) and (-webkit-min-device-pixel-ratio: 1.5),
+       only screen and (max-width: @breakTablet) and (                min-resolution: 1.5dppx),
+       only screen and (max-width: @breakTablet) and (                min-resolution: 144dpi) {
+
+}
+
+/****************************************************************************/
+// @Mobile Layout: 320px
+@media (max-width: @breakMobileLandscape) {
+
+}
