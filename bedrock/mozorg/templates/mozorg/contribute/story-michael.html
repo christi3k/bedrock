@@ -4,11 +4,11 @@
 
 {% extends "mozorg/contribute/stories-base.html" %}
 
-{% block page_title %}{{_('Mozillian Stories')}} : Faye {% endblock %}
+{% block page_title %}{{_('Mozillian Stories')}} : Michael {% endblock %}
 
 {% block story_content %}
   <h2 class="story-title">
-    {# L10n: These <b>s are for formatting. #}
+    {# L10n: These <b>s are for formatting so we can style the name and country. #}
     {{ _('Hi, I’m <b class="name">Michael</b>, a Mozillian in <b class="country">Switzerland</b>') }}
   </h2>
 
@@ -16,7 +16,9 @@
     <img class="photo" src="{{ media('img/contribute/person-michael.jpg') }}" alt="">
     <p>
     {% trans %}
-      I started contributing Firefox patches as a teenager in 2008. Four years later, I decided to officially become a Mozilla Rep and have been helping to build the Mozilla Switzerland community ever since.
+      I started contributing Firefox patches as a teenager in 2008. Four years
+      later, I decided to officially become a Mozilla Rep and have been helping
+      to build the Mozilla Switzerland community ever since.
     {% endtrans %}
     </p>
   </div>
@@ -25,9 +27,9 @@
     <h3>{{ _('I’m currently helping with:') }}</h3>
     <ul>
       <li>{{ _('Webmaker') }}</li>
-      <li>{{ _('Localization') }}</li>
       <li>{{ _('Hack-a-thons') }}</li>
       <li>Firefox OS</li>
+      <li>{{ _('Localization') }}</li>
     </ul>
   </div>
 
@@ -40,13 +42,18 @@
   <div class="story-more">
     <p>
     {% trans %}
-      In addition to organizing community events in Switzerland, I also coordinate events in Germany and Austria, making me one of only a few Mozillians to help pull off events in three different countries — all within a couple of months of each other.
+      In addition to organizing community events in Switzerland, I also coordinate
+      events in Germany and Austria, making me one of only a few Mozillians to help
+      pull off events in three different countries — all within a couple of months
+      of each other.
     {% endtrans %}
     </p>
 
     <p>
     {% trans %}
-      My goal now is to keep growing our global community through localization (translation), hacking and Webmaker projects. If you’re interested, please get in touch.
+      My goal now is to keep growing our global community through localization
+      (translation), hacking and Webmaker projects. If you’re interested, please
+      get in touch.
     {% endtrans %}
     </p>
   </div>
